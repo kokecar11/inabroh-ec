@@ -1,0 +1,137 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"name": "Brocha profesional",
+			"description": "Brocha profesional de",
+			"image": "/images/BROCHA_PROFESIONAL_BLANCA_4.png",
+			"category": "brochas",
+			"sizes": [
+				{
+					"size": "4\"",
+					"slug": "brocha-4",
+					"price": 15,
+					"isFeatured": true,
+					"isNew": true,
+					"isOnSale": true,
+					"isDiscount": false,
+					"discount": 0.5
+				},
+				{
+					"size": "3\"",
+					"slug": "brocha-3",
+					"price": 10,
+					"isFeatured": true,
+					"isNew": false,
+					"isOnSale": true,
+					"isDiscount": false,
+					"discount": 0.5
+				},
+				{
+					"size": "2\"",
+					"slug": "brocha-2",
+					"price": 10,
+					"isFeatured": true,
+					"isNew": false,
+					"isOnSale": true,
+					"isDiscount": false,
+					"discount": 0.5
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "Rodillo profesional",
+			"description": "Rodillo profesional de",
+			"image": "/images/BROCHA_PROFESIONAL_BLANCA_4.png",
+			"category": "rodillos",
+			"sizes": [
+				{
+					"size": "4\"",
+					"slug": "rodillo-4",
+					"price": 15,
+					"isFeatured": true,
+					"isNew": true,
+					"isOnSale": true,
+					"isDiscount": false,
+					"discount": 0.5
+				},
+				{
+					"size": "3\"",
+					"slug": "rodillo-3",
+					"price": 10,
+					"isFeatured": true,
+					"isNew": true,
+					"isOnSale": true,
+					"isDiscount": false,
+					"discount": 0.5
+				},
+				{
+					"size": "2\"",
+					"slug": "rodillo-2",
+					"price": 10,
+					"isFeatured": true,
+					"isNew": true,
+					"isOnSale": true,
+					"isDiscount": false,
+					"discount": 0.5
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Cinta profesional",
+			"description": "cinta profesional de",
+			"image": "/images/BROCHA_PROFESIONAL_BLANCA_4.png",
+			"category": "cintas",
+			"sizes": [
+				{
+					"size": "1\"",
+					"slug": "rodillo-1",
+					"price": 15,
+					"isFeatured": true,
+					"isNew": true,
+					"isOnSale": true,
+					"isDiscount": false,
+					"discount": 0.5
+				},
+				{
+					"size": "1.5\"",
+					"slug": "rodillo-1-5",
+					"price": 10,
+					"isFeatured": true,
+					"isNew": true,
+					"isOnSale": true,
+					"isDiscount": false,
+					"discount": 0.5
+				}
+			]
+		}
+	],
+	"aliados": [
+		{
+			"name": "Pinturas Tito pabon",
+			"description": "Reprehenderit velit magna non ut id quis velit nulla reprehenderit quis dolor. Nisi anim velit aliqua voluptate tempor incididunt. Do id aliquip eu eiusmod ut deserunt sint laborum dolor proident ea excepteur ullamco. Cillum ut commodo duis deserunt qui Lorem minim. Lorem deserunt pariatur nisi sit non elit ad dolore consequat magna Lorem dolor ea proident. Magna et dolor irure qui eu minim exercitation commodo do. Sint laborum quis deserunt mollit commodo ad commodo mollit sint."
+		}
+	],
+	"categorias": [
+		{
+			"id": 1,
+			"name": "Brochas",
+			"slug": "brochas",
+			"image": "/images/BROCHA_PROFESIONAL_BLANCA_4.png"
+		},
+		{
+			"id": 2,
+			"name": "Rodillos",
+			"slug": "rodillos",
+			"image": "/images/BROCHA_PROFESIONAL_BLANCA_4.png"
+		},
+		{
+			"id": 3,
+			"name": "Cintas",
+			"slug": "cintas",
+			"image": "/images/BROCHA_PROFESIONAL_BLANCA_4.png"
+		}
+	]
+}

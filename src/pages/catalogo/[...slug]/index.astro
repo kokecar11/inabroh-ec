@@ -1,0 +1,99 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/Header.astro'
+import BreadcumbsPages from '@/components/BreadcumbsPages.astro'
+import NewProduct from '@/components/products/NewProduct.astro'
+
+import data from '@/data/products.json'
+
+export async function getStaticPaths() {
+	return data.categorias.map(({ slug, name }) => {
+		return {
+			params: { slug },
+			props: { name, category: slug },
+		}
+	})
+}
+const { name, category } = Astro.props
+---
+
+<Layout
+	title={`Inabroh | ${name}`}
+	description="Inabroh herramientas de calidad.">
+	<main class="w-full h-screen">
+		<BreadcumbsPages />
+		<section class="my-2 container mx-auto">
+			<Header title="Nuevos lanzamientos" />
+			<div class="grid grid-cols-5 my-10 gap-2">
+				{
+					data.products
+						.slice(1)
+						.flatMap((product) =>
+							product.sizes.map((size) => ({
+								...product,
+								size: size.size,
+								price: size.price,
+								isNew: size.isNew,
+							})),
+						)
+						.map((product) => (
+							<NewProduct
+								name={product.name}
+								description={product?.description}
+								image={product.image}
+								size={product.size}
+								price={product.price}
+							/>
+						))
+				}
+			</div>
+		</section>
+		<section class="container mx-auto px-6">
+			<hr class="border border-primary/10" />
+			<div class="flex my-10">
+				<div class="w-1/4 border-2 border-primary/10 p-2 rounded-lg">
+					<div>
+						<div class="mx-auto px-6 my-2">
+							<div class="mb-2 flex items-center">
+								<h2 class="flex-1 text-md font-semibold">
+									Filtrar por categoria
+								</h2>
+							</div>
+							<hr class="border border-primary/10" />
+						</div>
+					</div>
+
+					<div class="mx-auto px-6 my-2">
+						<div class="mb-2 flex items-center">
+							<h2 class="flex-1 text-md font-semibold">Filtrar por marca</h2>
+						</div>
+						<hr class="border border-primary/10" />
+					</div>
+				</div>
+				<div class="grid grid-cols-3 gap-y-6 w-3/4">
+					{
+						data.products
+							.flatMap((product) =>
+								product.sizes.map((size) => ({
+									...product,
+									size: size.size,
+									price: size.price,
+									isNew: size.isNew,
+								})),
+							)
+							.filter((product) => product.category === category)
+							.map((product) => (
+								<NewProduct
+									name={product.name}
+									description={product?.description}
+									image={product.image}
+									size={product.size}
+									price={product.price}
+								/>
+							))
+					}
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

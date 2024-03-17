@@ -1,0 +1,35 @@
+---
+let breadcrumbs = [
+	{ title: 'Inicio', url: '/', isActive: false },
+	{ title: 'Catálogo', url: '/catalogo', isActive: false },
+]
+
+const currentUrl = Astro.request.url.split('/')[3]
+
+breadcrumbs = breadcrumbs.map((crumb) => ({
+	...crumb,
+	isActive: crumb.url === '/' + currentUrl,
+}))
+---
+
+<div class="container bg-white p-5 w-full mx-auto">
+	<ul class="ml-3 flex space-x-4 font-medium text-md">
+		{
+			breadcrumbs.map((crumb, index) => (
+				<>
+					<li>
+						<a
+							href={crumb.url}
+							class={`group transition duration-300 ${!crumb.isActive ? 'text-primary' : 'cursor-default'}`}>
+							{crumb.title}
+							{!crumb.isActive && (
+								<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary" />
+							)}
+						</a>
+					</li>
+					{index < breadcrumbs.length - 1 && <span class="mx-2">/</span>}
+				</>
+			))
+		}
+	</ul>
+</div>

@@ -1,0 +1,17 @@
+---
+interface Props {
+	name: string
+	image: string
+}
+
+const { image, name } = Astro.props
+---
+
+<div
+	class="grid place-items-center cursor-pointer transition-all transform duration-500 hover:scale-110 font-medium">
+	<div
+		class="shadow-lg grid place-items-center rounded-full w-48 h-48 mb-2 bg-primary/10">
+		<img width="200" height="200" src={image} alt='Brocha Profesional 4"' />
+	</div>
+	<h3 class="font-medium">{name}</h3>
+</div>
